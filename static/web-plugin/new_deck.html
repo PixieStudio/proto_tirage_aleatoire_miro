@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://miro.com/app/static/styles.1.0.css" />
+    <link rel="stylesheet" href="./css/yeti.css" />
+    <title>Gestionnaire de Deck</title>
+    <style>
+        html,
+        body {
+            background-color: transparent;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 class="font-weight-bold">Nouveau Deck</h3>
+    <form id="new_deck" onsubmit="newDeck(event)">
+        <input type="text" class="miro-input miro-input--primary" id="new_deck_name" name="new_deck_name"
+            placeholder="Nom du deck" />
+        <legend>Tirage unique : </legend>
+        <div class="form-group">
+            <div class="custom-control custom-radio">
+                <input type="radio" id="tirageUniqueOui" name="tirageUnique" class="custom-control-input" checked="">
+                <label class="custom-control-label" for="tirageUniqueOui">Oui</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="tirageUniqueNon" name="tirageUnique" class="custom-control-input">
+                <label class="custom-control-label" for="tirageUniqueNon">Non <small class="text-muted text-italic">Ne
+                        fonctionne pas avec les images, ni objets groupés.</small></label>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-lg btn-primary" name="Créer" value="Créer" />
+    </form>
+    <h3 class="font-weight-bold mt-3">Liste des Decks</h3>
+    <div id="deck_list"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9504dcbbc9.js" crossorigin="anonymous"></script>
+
+    <script src="https://miro.com/app/static/sdk.1.1.js"></script>
+    <script type="text/javascript" src="./js/variables.js"></script>
+    <script src="./js/new_deck.js"></script>
+</body>
+
+</html>

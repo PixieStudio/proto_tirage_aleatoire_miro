@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://miro.com/app/static/styles.1.0.css" />
+  <link rel="stylesheet" href="./css/yeti.css" />
+  <style>
+    body {
+      padding: 10px;
+      background-color: #11ffee00;
+    }
+
+    .scrollable-container {
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .icon {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scrollable-container">
+    <div class="miro-h3">Tirage Aléatoire</div>
+    <p class="miro-p-small">
+      Prototypage de tirage aléatoire avant intégration dans un vrai plugin.<br />
+      Version 0.1 - Fonctions <i>Création de decks multiples</i> et <i>Tirer</i> au hasard un
+      widget.
+    </p>
+    <p class="miro-p-small text-primary">
+      Le bouton <img class="icon" src="svg/bottom_panel/card-random.svg" /> n'est visible que par le propiétaire du
+      board.
+    </p>
+    <div class="miro-h4">Créer les éléments sur le board</div>
+    <ul class="miro-p-medium">
+      <li class="miro-p-l">
+        Importez votre deck de cartes sur le board, ou créez des widgets pour un tirage aléatoire.<br />
+        <small class="font-italic text-muted">Exemple : 6 Stickers contenant les résultats d'une table aléatoire à 6
+          entrées.</small>
+      </li>
+      <li class="miro-p-l">
+        Cliquez sur <img class="icon" src="svg/bottom_panel/card-random.svg" /> pour accéder au sous-menu.<br />
+        Le bouton <img class="icon" src="svg/draw_cards/settings.svg" /> vous permet de créer de nouveaux decks, ou de
+        configurer ceux sur le board.
+      </li>
+      <li class="miro-p-l">
+        Entrez un nom pour votre deck, puis cliquez sur "Créer"<br />
+        <small class="font-italic text-muted">Une Frame, un bouton pioche, et une zone de tirage vont être créés sur le
+          board.</small>
+      </li>
+      <li class="miro-p-l">
+        Vous pouvez positionner les nouveaux éléments sur votre board comme bon vous semble.<br />
+        <small class="font-italic text-muted">Exemple : La frame dans votre espace MJ pour ne pas gêner le chargement,
+          le bouton pioche
+          et la forme de résultat sur votre espace de jeu commun.</small><br />
+        <small class="font-italic text-primary">Astuce : Placez un dos de carte devant la zone de résultats pour un
+          effet plus immersif !</small><br />
+      </li>
+    </ul>
+    <div class="miro-h4">Configurer votre deck ou votre table aléatoire</div>
+    <ul class="miro-p-medium">
+      <li class="miro-p-l">
+        Déplacez les images de votre deck ou vos widgets dans la Frame.
+      </li>
+      <li class="miro-p-l">
+        Cliquez sur le titre de la Frame ou sur la forme accueillant les résultats.<br />
+        <small class="text-muted text-italic">Les 3 boutons <img class="icon" src="svg/draw_cards/active.svg" /> <img
+            class="icon" src="svg/draw_cards/reset.svg" /> et <img class="icon" src="svg/draw_cards/init.svg" /> ne
+          sont actifs qu'en sélectionnant la Frame ou le zone de résultat.</small>
+      </li>
+      <li class="miro-p-l">
+        Cliquez sur <img class="icon" src="svg/draw_cards/init.svg" />, pour initialiser le base de données du
+        deck.<br />
+        <small class="text-danger">Attention : Si vous recliquez sur ce bouton, la base de données sera réinitialisée,
+          l'ancienne pioche ne sera plus en mémoire.</small>
+      </li>
+
+    </ul>
+    <div class="miro-h4">Activer le bouton de pioche</div>
+    <ul class="miro-p-medium">
+      <li class="miro-p-l">
+        Une fois que vous êtes prêt, cliquez sur <img class="icon" src="svg/draw_cards/active.svg" /> pour
+        <strong>Activer le bouton 'Tirage aléatoire'</strong>.<br />
+        <small class="font-italic text-primary">Info : Cliquer de nouveau sur l'éclair désactivera le bouton de Tirage
+          aléatoire.</small>
+        <small class="text-muted font-italic">Cela vous permet de tirer une carte ou un widget aléatoirement, en
+          cliquant sur le bouton du board directement !</small>
+      </li>
+      <li class="miro-p-l">
+        Si votre deck est vide, ou que vous souhaitez remélanger votre deck, cliquez sur <img class="icon"
+          src="svg/draw_cards/reset.svg" /> pour <strong>Reconstruire le deck</strong> initial.
+      </li>
+    </ul>
+
+    <div class="miro-p-medium">
+      Dans cette version des widgets groupés sont considérés comme un seul
+      widget.
+    </div>
+    <div class="miro-p-medium text-danger mt-3">Attention : N'utilisez pas la fonction "Grid" de la Frame de votre deck.
+      Cela
+      désactive la
+      pioche. Si vous le modifiez par erreur, vous pouvez cliquer sur "Freeform" pour résoudre le problème.</div>
+    <p class="miro-p-small mt-3">
+      Icons by <a href="https://game-icons.net/tags/board.html" target="_blank">Game Icons</a> and <a
+        href="https://fontawesome.com/" target="_blank">Font Awesome</a> under
+      <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
+    </p>
+  </div>
+
+  <script src="https://miro.com/app/static/sdk.1.1.js"></script>
+
+</body>
+
+</html>

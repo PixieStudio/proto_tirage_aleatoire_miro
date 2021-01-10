@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <link rel="stylesheet" href="https://miro.com/app/static/styles.1.0.css" />
+  <link rel="stylesheet" href="./css/yeti.css" />
+  <style>
+    html,
+    body {
+      background-color: transparent;
+    }
+
+    .hide,
+    .hidden {
+      display: none;
+    }
+
+    .icon {
+      align-self: flex-end;
+      cursor: pointer;
+      /* margin: 15px 0 15px 15px; */
+      margin: 0 0 0 15px;
+    }
+
+    .panel1 {
+      padding: 12px 0 12px 0;
+    }
+
+    .panel2 {
+      padding: 12px 0 0 0;
+    }
+
+    .icon-selected,
+    .icon:hover {
+      filter: invert(100%) url("#iconFilter");
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="menu_draw_card" class="panel2 d-none"></div>
+    <div id="btn_bp_container" class="panel1">
+      <img class="icon" src="svg/bottom_panel/help.svg" alt="Aide" title="Aide" onclick="help()" />
+    </div>
+  </div>
+  <!-- chromium can't find filter in external file, use inline filter-->
+  <svg>
+    <defs>
+      <filter id="iconFilter">
+        <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values="0.26 0   0   0   0
+                0   0.38  0   0   0
+                0   0   1.00  0   0
+                0   0   0   1   0 " />
+      </filter>
+    </defs>
+  </svg>
+  <script src="https://miro.com/app/static/sdk.1.1.js"></script>
+  <script type="text/javascript" src="./js/variables.js"></script>
+  <script src="./js/bottompanel.js"></script>
+</body>
+
+</html>

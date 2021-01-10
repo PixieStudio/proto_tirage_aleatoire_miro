@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+	<h2>Autoriser l'APP</h2>
+	<button class="auth-app">Autoriser</button>
+	<script type="text/javascript" src="https://miro.com/app/static/sdk.1.1.js"></script>
+	<script>
+		document.querySelector('button').addEventListener('click', function () {
+			const authorizeOptions = {
+				response_type: 'token',
+				redirect_uri: 'https://' + window.location.host + '/static/web-plugin/auth-success.html'
+			}
+			miro.authorize(authorizeOptions)
+				.then(() => miro.getToken())
+				.then((token) => {
+					if (token) {
+						miro.board.ui.closeModal('success')
+					} else {
+						console.log('Quelque chose a mal tourné !')
+					}
+				})
+		})
+	</script>
+</body>
+
+</html>
