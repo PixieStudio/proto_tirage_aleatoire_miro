@@ -4,7 +4,7 @@
 
 Clone this repository to your local workspace.
 
-`git clone git@github.com:PixieStudio/proto_draw_card_miro.git`
+`git clone git@github.com:PixieStudio/proto_tirage_aleatoire_miro.git`
 
 Install packages.
 
