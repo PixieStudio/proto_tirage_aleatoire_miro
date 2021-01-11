@@ -126,7 +126,7 @@ async function deckInit(id) {
         [APP_ID]:  metadata
         }
     })
-    await miro.showNotification('La pioche a été initialisée.')
+    await miro.showNotification('Le Deck a été initialisé.')
     // await miro.board.ui.closeModal()
 }
 
@@ -192,5 +192,5 @@ async function deckReset(id) {
         )
     })
 
-    await miro.showNotification('La pioche est reconstruite.')
+    await miro.showNotification('Le Deck est reconstruit.')
 }
