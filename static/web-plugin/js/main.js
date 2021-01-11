@@ -67,8 +67,6 @@ async function drawBtn(deck) {
   let unique = frameMetadata.unique
   let ids = deckFrame[0].metadata[APP_ID].deck_participants
 
-  console.log(unique)
-
   if (ids.length === 0) {
     await miro.showNotification('Le Deck est vide !')
   } else {

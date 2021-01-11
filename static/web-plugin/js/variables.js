@@ -126,7 +126,7 @@ async function deckInit(id) {
         [APP_ID]:  metadata
         }
     })
-    await miro.showNotification('Le Deck a été initialisé.')
+    await miro.showNotification('Le deck a été initialisé.')
     // await miro.board.ui.closeModal()
 }
 
@@ -167,30 +167,30 @@ async function deckActive(id) {
 }
 
 async function deckReset(id) {
-    let deck = await getWidget({id: id})
-    deck = deck[0]
-    let deckId = deck.metadata[APP_ID].deck_id
-    let deckFrame = await getWidget(getAppWidget({type: 'deck_id', deck_id: deckId}))
-    let metadata = deckFrame[0].metadata[APP_ID]
-    metadata.deck_participants = metadata.deck_reset.slice()
+  let deck = await getWidget({id: id})
+  deck = deck[0]
+  let deckId = deck.metadata[APP_ID].deck_id
+  let deckFrame = await getWidget(getAppWidget({type: 'deck_id', deck_id: deckId}))
+  let metadata = deckFrame[0].metadata[APP_ID]
+  metadata.deck_participants = metadata.deck_reset.slice()
 
-    await miro.board.widgets.update({
-        id: deckFrame[0].id,
-        title: deckFrame[0].title,
-        metadata: {
-            [APP_ID]: metadata
-        }
-    })
+  await miro.board.widgets.update({
+      id: deckFrame[0].id,
+      title: deckFrame[0].title,
+      metadata: {
+          [APP_ID]: metadata
+      }
+  })
 
-    metadata.deck_participants.forEach(async card => {
-        let widget = await getWidget({id: card})
-        console.log(widget[0].id)
-        await miro.board.widgets.transformDelta(
-            {id: widget[0].id},
-            deckFrame[0].x - widget[0].x,
-            deckFrame[0].y - widget[0].y
-        )
-    })
-
-    await miro.showNotification('Le Deck est reconstruit.')
+  metadata.deck_participants.forEach(async card => {
+      let widget = await getWidget({id: card})
+      await miro.board.widgets.transformDelta(
+          {id: widget[0].id},
+          deckFrame[0].x - widget[0].x,
+          deckFrame[0].y - widget[0].y
+      )
+  })
+  await miro.showNotification('Le deck est mélangé !')
+  
 }
+

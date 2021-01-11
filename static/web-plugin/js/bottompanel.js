@@ -36,7 +36,7 @@ function menuDrawCard(widget) {
     <img id="add_deck" class="icon" src="svg/draw_cards/settings.svg" alt="Decks" title="Decks" onclick="openNewDeck()" />
     <img id="init_deck" class="icon" src="svg/draw_cards/init.svg" alt="Initialiser le deck" title="Initialiser le deck" onclick="btnMenuDraw('init')" />
     <img id="activer_pioche" class="icon" src="svg/draw_cards/active.svg" alt="Activer le deck" title="Activer le deck" onclick="btnMenuDraw('active')" />
-    <img id="reset_deck" class="icon" src="svg/draw_cards/reset.svg" alt="Reconstruire le deck" title="Reconstruire le deck" onclick="btnMenuDraw('reset')" />
+    <img id="reset_deck" class="icon" src="svg/draw_cards/reset.svg" alt="Mélanger le deck" title="Mélanger le deck" onclick="btnMenuDraw('reset')" />
     `
     expandPanel(93, 175)
     parent.classList.add('icon-selected')

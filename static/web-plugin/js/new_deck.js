@@ -159,6 +159,23 @@ async function newDeck(e) {
         
     })
 
+    const deckWarning = await miro.board.widgets.create({
+        type: "STICKER",
+        style: {
+            stickerBackgroundColor: "#f16c7f",
+            fontSize: 10,
+            fontFamily: 10,
+            textAlign: "l",
+            textAlignVertical: "m",
+            stickerType: 0
+        },
+        x: deckSticker[0].x,
+        y: deckSticker[0].y + deckSticker[0].bounds.height + 10,
+        scale: 2,
+        text: "<p>Attention !</p><p>Si un élément du deck est supprimé, vous ne pourrez pas remélanger.</p><p>Pensez à faire une copie de votre deck dans votre espace MJ, afin de réinitialiser le Deck.</p>",
+        
+    })
+
       await miro.board.ui.closeModal()
 
 }
